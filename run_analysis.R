@@ -92,7 +92,7 @@ names(augmentedSubsetData)<-gsub("^f", "frequency", names(augmentedSubsetData))
 secondIndependentTidyData <- aggregate(.~Subject + Activity, augmentedSubsetData,mean)
 tidyData <- secondIndependentTidyData[order(secondIndependentTidyData$Subject,secondIndependentTidyData$Activity),]
 
-write.table(tidyData, "./tidyData.txt", row.name=TRUE)
+write.table(tidyData, "./tidyData.txt", row.name=FALSE)
 write.csv(tidyData, file = "./tidyData.csv")
 
 
